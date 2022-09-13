@@ -1260,7 +1260,7 @@
   .show > .btn-primary.dropdown-toggle,
   .show > .btn-primary.dropdown-toggle:focus,
   .show > .btn-primary.dropdown-toggle:hover {
-    background-color: #40a249;
+    background-color: #365a91;
     color: #FFFFFF;
     box-shadow: none; }
   .btn-primary:hover {
@@ -2095,8 +2095,8 @@ textarea.form-control {
   color: #888; }
 
 .badge-primary {
-  border-color: #378C3F;
-  color: #378C3F; }
+  border-color: #365a91;
+  color: #365a91; }
 
 .badge-info {
   border-color: #2CA8FF;
@@ -3453,7 +3453,7 @@ Created using IcoMoon - icomoon.io
     background-color: #FFB236; }
   .card[data-background-color="blue"] {
     background-color: #2CA8FF; }
-  .card[data-background-color="green"] {
+  .card[data-background-color="blue"] {
     background-color: #3376db; }
 
 .card-signup {
@@ -3648,7 +3648,7 @@ Created using IcoMoon - icomoon.io
   /* For Safari 5.1 to 6.0 */
   /* For Opera 11.1 to 12.0 */
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(0deg, rgba(227, 227, 227, 0.26), rgba(55, 140, 63, 0.95));
+  background: linear-gradient(0deg, rgba(227, 227, 227, 0.26), rgba(55, 109, 140, 0.95));
   /* Standard syntax */ }
 
 .section-full-page[data-image]:after {
@@ -4615,12 +4615,12 @@ Created using IcoMoon - icomoon.io
     transform: translate3d(300px, 0, 0);
     transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1); }
     .burger-menu .navbar-collapse:before {
-      background: #378C3F;
+      background: #365a91;
       /* For browsers that do not support gradients */
       /* For Safari 5.1 to 6.0 */
       /* For Opera 11.1 to 12.0 */
       /* For Firefox 3.6 to 15 */
-      background: linear-gradient(#378C3F 0%, #000 80%);
+      background: linear-gradient(#365a91 0%, #000 80%);
       /* Standard syntax (must be last) */
       opacity: 0.76;
       filter: alpha(opacity=76);
@@ -5123,7 +5123,8 @@ Created using IcoMoon - icomoon.io
   /* For Safari 5.1 to 6.0 */
   /* For Opera 11.1 to 12.0 */
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(55, 140, 63, 0.6));
+  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(55, 109, 140, 0.6));
+
   /* Standard syntax */ }
   .page-header .btn {
     width: 140px; }
@@ -5153,7 +5154,7 @@ Created using IcoMoon - icomoon.io
 
 .cc-profile-image a:before {
   content: "";
-  border: 15px solid rgba(55, 140, 63, 0.6);
+  border: 15px solid rgba(55, 109, 140, 0.6);
   border-radius: 50%;
   height: 180px;
   width: 180px;
