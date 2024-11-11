@@ -83,7 +83,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width:80%;
 }
 .section{
     display: flex;
@@ -335,26 +335,21 @@ body {
  * Services
  * ==================
  */
- .service-cards {
+
+.service-cards{
     display: flex;
-    flex-direction: row;
-    justify-content: center; /* Center the entire row of cards */
-    align-items: flex-start; /* Align the cards at the top */
-    width: 60%; /* Reduce the container width to force the cards closer */
-    max-width: 1000px; /* Add a max width to limit expansion */
-    margin: 0 auto; /* Center the container on the page */
-    gap: 1rem; /* Set a smaller gap between cards */
-    margin-top: 5rem; /* Keep some margin for spacing from top content */
+    flex-direction: column;
+    margin-top: 10rem;
+    max-width: 1000px;
 }
 .service-card__box{
-    flex: 1; /* Allow cards to take up equal space */
-    max-width: 450px; /* Set a max width to prevent excessive size */
-    min-width: 450px; /* Set a minimum width so cards don’t shrink too much */
-    margin-bottom: 3rem; /* Adjust the margin at the bottom */
-    margin: 0; /* Remove any default margin */
-    border: 2px solid #00372b; /* Maintain your border style */
-    padding: 1.5rem; /* Keep padding consistent */
-    border-radius: 15px; /* Maintain the card radius for consistent styling */
+    flex: 1; 
+    max-width: 450px; 
+    min-width: 450px;
+    margin-bottom: 7rem;
+    border: 2px solid #00372b;
+    padding: 1.5rem;
+    border-radius: 15px;
     position: relative;
     overflow: hidden;
 }
@@ -362,6 +357,9 @@ body {
     display: flex;
     width: 250px;
 }
+
+
+
 .service-card__illustration img{
     width: 100%;
     pointer-events: none;
@@ -906,6 +904,25 @@ body {
     .article{
         width: 50%;
     }
+
+    /* .service-cards{
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .service-card__box{
+        width: 100%; /* Make each card take full width */
+        /* max-width: 100%; /* Ensure no horizontal overflow */
+        /* margin-bottom: 2rem; Add space between stacked cards */
+        /* box-sizing: border-box; */
+    /* } */
+    /* .service-card__illustration{ */
+        /* width: 100%;
+        max-width: 150px;
+        height: 150px;
+    }  */
+
 }
 
 /*
