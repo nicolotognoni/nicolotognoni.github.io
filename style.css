@@ -1140,7 +1140,9 @@ body {
     /* Adjust hover color as needed */
 }
 
-
+#portfolioModal {
+    display: none;
+}
 
 
 
