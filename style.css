@@ -794,6 +794,35 @@ body {
 
 
 
+.interest {
+    width: 100%;
+    padding: 2%;
+}
+
+.interest__box {
+    border-radius: 20px;
+    padding: 1.5rem;
+    background-color: #26222d;
+}
+
+.interest__box:hover {
+    transform: translateY(-5px);
+    /* Slight lift on hover */
+    box-shadow: 0 0 15px #59FFB9, 0 0 30px #59FFB9, 0 0 45px #59FFB9;
+    /* Glowing green shadow */
+}
+
+.interest__box:hover::before {
+    opacity: 0.2;
+    /* Control the intensity of the glow */
+}
+
+.interest__box h3 a:visited {
+    color: #00FF94;
+    /* Ensures the visited link remains green */
+}
+
+
 
 
 
@@ -1585,6 +1614,10 @@ body {
     .resume__box {
         max-width: 350px;
     }
+
+    .interest__box {
+        max-width: 400px;
+    }
 }
 
 /*
@@ -1608,6 +1641,11 @@ body {
 
     .resume {
         width: 50%;
+        flex-direction: column;
+    }
+
+    .interest {
+        width: 100%;
         flex-direction: column;
     }
 
