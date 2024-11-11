@@ -252,3 +252,18 @@ document.querySelectorAll('.work').forEach((projectBox) => {
     openPortfolioModal(projectId);
   });
 });
+
+
+
+const navBar = document.getElementById('navBar');
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+
+hamburgerBtn.addEventListener('click', () => {
+    navBar.classList.toggle('nav--active');
+});
+
+document.querySelectorAll('.nav__list-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navBar.classList.remove('nav--active');
+    });
+});
