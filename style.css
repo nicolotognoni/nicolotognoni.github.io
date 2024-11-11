@@ -1146,12 +1146,101 @@ body {
 
 
 
+/*
+ * ========================
+ * Mobile Screen -- 408px
+ * ========================
+ */
+
+/* Regole per schermi molto piccoli - inferiore a 400px */
+@media only screen and (max-width: 430px) {
+
+    .section__title {
+        font-size: 3rem; /* Riduce ulteriormente la dimensione del font */
+        text-align: center; /* Allineamento al centro per migliorare la leggibilità */
+        line-height: 1.2; /* Line-height più compatto */
+    }
+
+    .container {
+        max-width: 95%; /* Larghezza massima più stretta per adattarsi allo schermo */
+    }
+
+    /* Altre regolazioni per elementi all'interno delle sezioni */
+    .work__title, .card .h5 {
+        font-size: 2rem; /* Dimensione ridotta per i titoli dei certificati o dei progetti */
+    }
+
+    .work__description, .card .category {
+        font-size: 1.5rem; /* Font più piccolo per descrizioni o dettagli */
+    }
+
+    .work__box, .card-body {
+        padding: 1.5rem; /* Riduce il padding per risparmiare spazio */
+    }
+
+    /* Regole per il bottone */
+    .header__resume, .work__badge {
+        font-size: 1.4rem; /* Riduce il font dei bottoni */
+    }
+
+
+
+
+
+    .service-card__box {
+        padding: 1rem; /* Riduce il padding */
+        font-size: 1.5rem; /* Riduce la dimensione del font */
+        max-width: 90%; /* Limita la larghezza massima per evitare bordi */
+        margin: 0 auto 1.5rem auto; /* Centra e aggiunge margine inferiore */
+    }
+
+    /* Illustrazione */
+    .service-card__illustration img {
+        width: 200px; /* Riduce la dimensione dell'immagine */
+        height: auto;
+        margin-bottom: 0.5rem; /* Aggiusta il margine inferiore */
+    }
+
+    /* Titoli e Testo */
+    .service-card__box h3 {
+        font-size: 2rem; /* Riduce la dimensione del titolo */
+        margin-bottom: 0.3rem; /* Riduce il margine inferiore */
+    }
+
+    .resume-date {
+        font-size: 1.4rem; /* Riduce la dimensione della data */
+    }
+
+    .resume-role {
+        font-size: 1.5rem; /* Riduce la dimensione del ruolo */
+        font-weight: bold;
+    }
+
+    .resume-description li {
+        font-size: 1.5rem; /* Riduce la dimensione del testo nella lista */
+        margin-bottom: 0.3rem; /* Riduce il margine inferiore tra gli elementi */
+    }
+
+    /* Aggiusta il background */
+    .service-card__bg {
+        display: none; /* Nasconde o riduce l'effetto di background per schermi molto piccoli */
+    }
+
+    /* Allinea meglio gli elementi */
+    .service-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
 
 
 
 
 
 
+
+}
 
 
 /*
@@ -1210,6 +1299,10 @@ body {
 
     .article {
         width: 50%;
+    }
+
+    .section__title {
+        font-size: 5rem; /* Adjust the size as needed */
     }
 
 }
