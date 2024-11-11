@@ -169,6 +169,8 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     width: 80%;
 }
 
@@ -666,7 +668,7 @@ body {
     border: 2px solid #00372b;
     padding: 2rem;
     border-radius: 15px;
-    background-color: #000000;
+    background-color: #26222d;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -738,7 +740,7 @@ body {
 }
 
 .work__box {
-    border-radius: 7px;
+    border-radius: 20px;
     padding: 1.5rem;
     background-color: #26222d;
 }
@@ -759,6 +761,42 @@ body {
     color: #00FF94;
     /* Ensures the visited link remains green */
 }
+
+
+
+.resume {
+    width: 100%;
+    padding: 2%;
+}
+
+.resume__box {
+    border-radius: 20px;
+    padding: 1.5rem;
+    background-color: #26222d;
+}
+
+.resume__box:hover {
+    transform: translateY(-5px);
+    /* Slight lift on hover */
+    box-shadow: 0 0 15px #59FFB9, 0 0 30px #59FFB9, 0 0 45px #59FFB9;
+    /* Glowing green shadow */
+}
+
+.resume__box:hover::before {
+    opacity: 0.2;
+    /* Control the intensity of the glow */
+}
+
+.resume__box h3 a:visited {
+    color: #00FF94;
+    /* Ensures the visited link remains green */
+}
+
+
+
+
+
+
 
 .work__img-box {
     width: 100%;
@@ -794,6 +832,110 @@ body {
 }
 
 
+
+
+
+
+
+
+
+
+
+/* Skills Section */
+#skills {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.skills__description {
+    font-size: 1.8rem;
+    margin-bottom: 4rem; /* Increased spacing below the description */
+    color: #cbcbcb;
+}
+
+/* Skill Cards */
+.skills__cards {
+    
+    display: flex;
+    justify-content: center;
+    gap: 3rem; /* Increased spacing between the cards */
+    margin-bottom: 5rem; /* Increased spacing below the skill cards */
+}
+
+.skills__card {
+    border-radius: 20px;
+    background-color: #26222d;
+    padding: 2rem;
+    width: 180px;
+    box-shadow: 0 0 15px #59ffba89, 0 0 30px #59ffba89;
+    text-align: center;
+}
+
+.skills__card-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.skills__card-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #00FF94;
+    margin-bottom: 0.5rem;
+}
+
+.skills__card-details {
+    font-size: 1.2rem;
+    color: #fffdfd;
+}
+
+/* Skill Icons */
+.skills__icons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.skills__icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skills__icon {
+    width: 100px;
+    height: 100px;
+    background-color: #26222d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px #59ffba89, 0 0 30px #59ffba89;
+    margin-bottom: 1rem;
+}
+
+.skills__icon img {
+    width: 50%;
+    height: 50%;
+}
+
+.skills__icon-title {
+    color: #00FF94;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 1.5rem; /* Increased spacing below the icon */
+}
+
+/* Title and Subtitle Spacing */
+.section__title {
+    margin-bottom: 3rem; /* Increased spacing below the main title */
+}
+
+.skills__description {
+    margin-bottom: 6rem; /* Increased spacing below the subtitle */
+    margin-top: 2rem; 
+}
 
 
 
@@ -1156,74 +1298,102 @@ body {
 @media only screen and (max-width: 430px) {
 
     .section__title {
-        font-size: 3rem; /* Riduce ulteriormente la dimensione del font */
-        text-align: center; /* Allineamento al centro per migliorare la leggibilità */
-        line-height: 1.2; /* Line-height più compatto */
+        font-size: 3rem;
+        /* Riduce ulteriormente la dimensione del font */
+        text-align: center;
+        /* Allineamento al centro per migliorare la leggibilità */
+        line-height: 1.2;
+        /* Line-height più compatto */
     }
 
     .container {
-        max-width: 95%; /* Larghezza massima più stretta per adattarsi allo schermo */
+        max-width: 95%;
+        /* padding: 0 1rem; */
+    
     }
 
     /* Altre regolazioni per elementi all'interno delle sezioni */
-    .work__title, .card .h5 {
-        font-size: 2rem; /* Dimensione ridotta per i titoli dei certificati o dei progetti */
+    .work__title,
+    .card .h5 {
+        font-size: 2rem;
+        /* Dimensione ridotta per i titoli dei certificati o dei progetti */
     }
 
-    .work__description, .card .category {
-        font-size: 1.5rem; /* Font più piccolo per descrizioni o dettagli */
+    .work__description,
+    .card .category {
+        font-size: 1.5rem;
+        /* Font più piccolo per descrizioni o dettagli */
     }
 
-    .work__box, .card-body {
-        padding: 1.5rem; /* Riduce il padding per risparmiare spazio */
+    .work__box,
+    .card-body {
+        padding: 1.5rem;
+        /* Riduce il padding per risparmiare spazio */
     }
 
     /* Regole per il bottone */
-    .header__resume, .work__badge {
-        font-size: 1.4rem; /* Riduce il font dei bottoni */
+    .header__resume,
+    .work__badge {
+        font-size: 1.4rem;
+        /* Riduce il font dei bottoni */
     }
 
 
 
-
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 0;
+    }
 
     .service-card__box {
-        padding: 1rem; /* Riduce il padding */
-        font-size: 1.5rem; /* Riduce la dimensione del font */
-        max-width: 90%; /* Limita la larghezza massima per evitare bordi */
-        margin: 0 auto 1.5rem auto; /* Centra e aggiunge margine inferiore */
+        width: 100%; /* Ensure full width */
+        max-width: 95%; /* Keep some margin on each side */
+        padding: 1rem;
+        box-sizing: border-box;
+        font-size: 1.4rem;
     }
 
     /* Illustrazione */
     .service-card__illustration img {
-        width: 200px; /* Riduce la dimensione dell'immagine */
+        width: 200px;
+        /* Riduce la dimensione dell'immagine */
         height: auto;
-        margin-bottom: 0.5rem; /* Aggiusta il margine inferiore */
+        margin-bottom: 0.5rem;
+        /* Aggiusta il margine inferiore */
     }
 
     /* Titoli e Testo */
     .service-card__box h3 {
-        font-size: 2rem; /* Riduce la dimensione del titolo */
-        margin-bottom: 0.3rem; /* Riduce il margine inferiore */
+        font-size: 2rem;
+        /* Riduce la dimensione del titolo */
+        margin-bottom: 0.3rem;
+        /* Riduce il margine inferiore */
     }
 
     .resume-date {
-        font-size: 1.4rem; /* Riduce la dimensione della data */
+        font-size: 1.4rem;
+        /* Riduce la dimensione della data */
     }
 
     .resume-role {
-        font-size: 1.5rem; /* Riduce la dimensione del ruolo */
+        font-size: 1.5rem;
+        /* Riduce la dimensione del ruolo */
         font-weight: bold;
     }
 
     .resume-description li {
-        font-size: 1.5rem; /* Riduce la dimensione del testo nella lista */
-        margin-bottom: 0.3rem; /* Riduce il margine inferiore tra gli elementi */
+        font-size: 1.5rem;
+        /* Riduce la dimensione del testo nella lista */
+        margin-bottom: 0.3rem;
+        /* Riduce il margine inferiore tra gli elementi */
     }
 
     /* Aggiusta il background */
     .service-card__bg {
-        display: none; /* Nasconde o riduce l'effetto di background per schermi molto piccoli */
+        display: none;
+        /* Nasconde o riduce l'effetto di background per schermi molto piccoli */
     }
 
     /* Allinea meglio gli elementi */
@@ -1232,9 +1402,82 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+        padding-left: 0; /* Elimina padding aggiuntivo */
+        padding-right: 0;
     }
 
 
+    .service-card__box {
+        width: 100%;
+        max-width: 100px;
+        margin: 0 auto;
+        padding: 1rem;
+        box-sizing: border-box;
+    
+    }
+
+
+
+
+
+
+    .section__title {
+        font-size: 3rem; /* Reduced main title font size */
+        margin-bottom: 1.5rem;
+    }
+
+    .skills__description {
+        font-size: 1.4rem; /* Reduced subtitle font size */
+        margin-bottom: 3rem;
+    }
+
+    /* Skill Cards */
+    .skills__cards {
+        flex-direction: row; /* Stack skill cards vertically */
+        gap: 1.5rem; /* Reduced gap between cards */
+        margin-bottom: 3rem; /* Reduced space below cards */
+    }
+
+    .skills__card {
+        padding: 1.5rem; /* Reduced padding */
+        width: 90%; /* Make cards narrower */
+        margin: 0 auto;
+        font-size: 1.5rem; /* Reduce font size in cards */
+    }
+
+    .skills__card-title {
+        font-size: 1.5rem; /* Adjusted title size */
+        margin-bottom: 0.3rem;
+    }
+
+    .skills__card-details {
+        font-size: 1.5rem; /* Adjusted details font size */
+    }
+
+    /* Skill Icons */
+    .skills__icons {
+        flex-direction: row; /* Stack icons vertically */
+        gap: 1.5rem; /* Reduced gap between icons */
+    }
+
+    .skills__icon-box {
+        font-size: 1.2rem; /* Reduced font size for labels */
+    }
+
+    .skills__icon {
+        width: 70px; /* Reduced icon size */
+        height: 70px;
+        margin-bottom: 0.5rem;
+    }
+
+    .skills__icon img {
+        width: 50%; /* Adjust icon image size */
+        height: 50%;
+    }
+
+    .skills__icon-title {
+        font-size: 1.5rem; /* Reduced label font size */
+    }
 
 
 
@@ -1301,9 +1544,9 @@ body {
         width: 50%;
     }
 
-    .section__title {
-        font-size: 5rem; /* Adjust the size as needed */
-    }
+
+
+
 
 }
 
@@ -1338,6 +1581,10 @@ body {
     .article {
         width: 50%;
     }
+
+    .resume__box {
+        max-width: 350px;
+    }
 }
 
 /*
@@ -1351,11 +1598,16 @@ body {
     }
 
     .section__title {
-        font-size: 8rem;
+        font-size: 5rem;
     }
 
     .work {
         width: 33.33333333333333%;
+        flex-direction: column;
+    }
+
+    .resume {
+        width: 50%;
         flex-direction: column;
     }
 
