@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap"
+        rel="stylesheet">
 
     <!-- JavaScript Libraries -->
     <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
 
     <!-- CSS & JS -->
-    <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./style.css" />
     <script src="./index.js" defer></script>
 
     <!-- Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="100% FREE Professional Portfolio Templates - Plain Template"/>
-    <meta name="keywords" content="OSSPH, Free portfolio"/>
+    <meta name="description" content="Nicolo Tognoni website" />
+    <meta name="keywords" content="" />
     <title> Nicolo Tognoni </title>
 
     <!-- Icons -->
@@ -34,274 +36,337 @@
     <link rel="apple-touch-icon" sizes="60x60" href="./assets/icons/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="57x57" href="./assets/icons/apple-touch-icon-57x57.png">
 </head>
+
 <body>
-<main>
-    <!-- Hero Header -->
-    <header id="heroHeader" class="hero-header">
-        <nav id="navBar" class="nav">
-            <div class="container">
-                <button type="button" id="hamburgerBtn" class="nav__hamburger-btn">
-                    <span class="nav__hamburger-top"></span>
-                    <span class="nav__hamburger-center"></span>
-                    <span class="nav__hamburger-bottom"></span>
-                </button>
-                <ul id="navList" class="nav__list">
-                    <li class="nav__list-item">
-                        <a class="nav__list-link active" href="#heroHeader">&lt;Home &sol;&gt;</a>
-                    </li>
-                    <li class="nav__list-item">
-                        <a class="nav__list-link" href="#resume">&lt;Resume &sol;&gt;</a>
-                    </li>
-                    <li class="nav__list-item">
-                        <a class="nav__list-link" href="#portfolio">&lt;Portfolio &sol;&gt;</a>
-                    </li>
-                    <li class="nav__list-item">
-                        <a class="nav__list-link" href="#contact">&lt;Contact &sol;&gt;</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <section class="header__container container">
-            <div class="header__left">
-                <span class="header__sup-text">Hello There! I am</span>
-                <h1 class="header__title">
-                    <span class="header__title-1" data-role="NICOLO'">NICOLO'</span>
-                    <span class="header__title-2" data-role="TOGNONI">TOGNONI</span>
-                </h1>
-                <p class="header__msg">As a Packaged App Development Analyst at Accenture, I specialize in backend 
-                    development with a strong foundation in Java. I’m also experienced in Python for data analysis, 
-                    computer vision, and deep learning, combining efficient backend solutions 
-                    with a passion for data-driven insights.</p>
-                <a href="#" class="header__resume">Resume</a>
-            </div>
-            <div class="header__right">
-                <img src="./assets/illustrations/header.svg" alt="Header section illustration"/>
+    <main>
+        <!-- Hero Header -->
+        <header id="heroHeader" class="hero-header">
+            <nav id="navBar" class="nav">
+                <div class="container">
+                    <button type="button" id="hamburgerBtn" class="nav__hamburger-btn">
+                        <span class="nav__hamburger-top"></span>
+                        <span class="nav__hamburger-center"></span>
+                        <span class="nav__hamburger-bottom"></span>
+                    </button>
+                    <ul id="navList" class="nav__list">
+                        <li class="nav__list-item">
+                            <a class="nav__list-link active" href="#heroHeader">&lt;Home &sol;&gt;</a>
+                        </li>
+                        <li class="nav__list-item">
+                            <a class="nav__list-link" href="#portfolio">&lt;Portfolio &sol;&gt;</a>
+                        </li>
+                        <li class="nav__list-item">
+                            <a class="nav__list-link" href="#resume">&lt;Resume &sol;&gt;</a>
+                        </li>
+                        <li class="nav__list-item">
+                            <a class="nav__list-link" href="#contact">&lt;Contact &sol;&gt;</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <section class="header__container container">
+                <div class="header__left">
+                    <span class="header__sup-text">Hello There! I am</span>
+                    <h1 class="header__title">
+                        <span class="header__title-1" data-role="NICOLO'">NICOLO'</span>
+                        <span class="header__title-2" data-role="TOGNONI">TOGNONI</span>
+                    </h1>
+                    <p class="header__msg">As a Packaged App Development Analyst at Accenture, I specialize in backend
+                        development with a strong foundation in Java. I’m also experienced in Python for data analysis,
+                        computer vision, and deep learning, combining efficient backend solutions
+                        with a passion for data-driven insights.</p>
+                    <a href="#" class="header__resume">Resume</a>
+                </div>
+                <div class="header__right">
+                    <img src="./assets/illustrations/header.svg" alt="Header section illustration" />
+                </div>
+            </section>
+            <span class="header__bg"></span>
+        </header>
+
+
+
+
+
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="section container">
+            <h2 class="section__title">Portfolio</h2>
+            <div class="works">
+
+                <!-- Project 1: Satellite Image Classification with a CNN -->
+                <article class="work">
+                    <div class="work__box">
+                        <span class="work__img-box">
+                            <img src="./assets/works/satellite_image_classification.jpg"
+                                alt="Satellite Image Classification" />
+                        </span>
+                        <h3 class="work__title">Satellite Image Classification with a CNN</h3>
+                        <p class="work__description">
+                            Developed a Convolutional Neural Network in Python with TensorFlow to classify satellite
+                            images.
+                            Applied data augmentation to enhance accuracy, achieving 82% with a custom CNN and 93% using
+                            Transfer Learning with InceptionV3.
+                        </p>
+                        <span class="work__badges">
+                            <span class="work__badge">Python</span>
+                            <span class="work__badge">TensorFlow</span>
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Project 2: GAN for Increasing CNN Accuracy -->
+                <article class="work">
+                    <div class="work__box">
+                        <span class="work__img-box">
+                            <img src="./assets/works/gan_cnn_accuracy.jpg" alt="GAN for Increasing CNN Accuracy" />
+                        </span>
+                        <h3 class="work__title">GAN for Increasing CNN Accuracy</h3>
+                        <p class="work__description">
+                            Part of my Master’s thesis, this project used GANs to generate additional synthetic data,
+                            enhancing CNN accuracy
+                            in cases with limited real-world data. Implemented with StyleGAN2_ADA and a CNN model to
+                            measure improvements
+                            before and after adding synthetic images.
+                        </p>
+                        <span class="work__badges">
+                            <span class="work__badge">Python</span>
+                            <span class="work__badge">StyleGAN2_ADA</span>
+                        </span>
+                    </div>
+                </article>
+
+
+                <article class="work">
+                    <div class="work__box">
+                        <span class="work__img-box">
+                            <img src="./assets/works/sample.png" alt="My Work 1" />
+                        </span>
+                        <h3 class="work__title">My Landing Page</h3>
+                        <span class="work__badges">
+                            <span class="work__badge">HTML</span>
+                            <span class="work__badge">CSS</span>
+                            <span class="work__badge">JavaScript</span>
+                        </span>
+                    </div>
+                </article>
             </div>
         </section>
-        <span class="header__bg"></span>
-    </header>
 
-    <!-- Resume -->
-    <!-- <section id="resume" class="section container">
-        <h2 class="section__title">Resume</h2>
 
-        <div class="service-cards">
-            <article class="service-card__box">
-                <span class="service-card__illustration">
-                    <img src="./assets/services/support.svg" alt="Support Illustration"/>
+
+
+
+        <!-- Articles -->
+        <section id="articles" class="section container">
+            <h2 class="section__title">Articles</h2>
+
+            <div class="works">
+
+
+                <!-- Article 1 -->
+                <a href="https://medium.com/towards-artificial-intelligence/building-feedforward-neural-networks-from-scratch-c5a5cf23b97b"
+                    target="_blank" class="article-link">
+                    <article class="work">
+                        <div class="work__box">
+
+                            <span class="work__img-box">
+                                <img src="./assets/works/cnn_squared.png" alt="cnn" />
+                            </span>
+                            <h3>Building Feedforward Neural Networks from Scratch</h3>
+                            <p class="work__description">
+                                Step-by-step instructions on building a feedforward neural network from scratch,
+                                focusing on understanding the fundamentals.
+                            </p>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Article 2 -->
+                <a href="https://medium.com/geekculture/train-stylegan2-ada-with-custom-datasets-in-colab-11accf22ef9b"
+                    target="_blank" class="article-link">
+                    <article class="work">
+                        <div class="work__box">
+
+                            <span class="work__img-box">
+                                <img src="./assets/works/stylegan_squared.png" alt="stylegan" />
+                            </span>
+                            <h3>Train StyleGAN2-ADA with Custom Datasets in Colab
+                            </h3>
+                            <p class="work__description">
+                                A tutorial on how to train StyleGAN2-ADA with custom datasets using Google Colab, ideal
+                                for
+                                generating high-quality synthetic data.
+                            </p>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Article 3 -->
+
+                <a href="https://medium.com/geekculture/creating-a-virtual-environment-with-wsl2-and-linux-on-windows-11-5ffa027ad87a"
+                    target="_blank" class="article-link">
+                    <article class="work">
+                        <div class="work__box">
+
+                            <span class="work__img-box">
+                                <img src="./assets/works/wsl_squared.png" alt="wsl" />
+                            </span>
+                            <h3>Creating a Virtual Environment with WSL2 and Linux on Windows 11</h3>
+                            <p class="work__description">
+                                A guide to setting up a virtual environment on Windows 11 using WSL2 and Linux for
+                                efficient
+                                development.
+                            </p>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- Resume -->
+        <section id="resume" class="section container">
+            <h2 class="section__title">Resume</h2>
+
+            <h3 class="resume-section__title" style="margin-top: 5rem;">Work Experience</h3>
+
+            <div class="service-cards">
+
+                <article class="service-card__box">
+                    <span class="service-card__illustration">
+                        <img src="./assets/services/support.svg" alt="Support Illustration" />
+                    </span>
+
+                    <h3>Accenture Industry X</h3>
+                    <span class="resume-date">Oct 2023 - Present</span>
+                    <p class="resume-role">Packaged App Development Analyst</p>
+                    <ul class="resume-description">
+                        <li><strong>Backend Development:</strong> Built and optimized backend systems for an order
+                            management platform using Java, Spring Boot, and Hibernate, focusing on efficient APIs and
+                            data flow.</li>
+                        <li><strong>Data Management:</strong> Integrated SQL with Hibernate and managed database data
+                            daily to ensure accuracy for order processing and reporting.</li>
+                    </ul>
+                    <span class="service-card__bg"></span>
+                </article>
+
+
+
+                <article class="service-card__box">
+
+                    <span class="service-card__illustration">
+                        <img src="./assets/services/design.svg" alt="Design Illustration" />
+                    </span>
+
+                    <h3>Accenture Industry X</h3>
+                    <span class="resume-date">Jan 2023 - Sept 2023</span>
+                    <p class="resume-role">Intern</p>
+                    <ul class="resume-description">
+                        <li><strong>Machine Learning & Computer Vision:</strong> Contributed to a Python computer vision
+                            project, where I managed data collection and supervised data labeling processes, enhancing
+                            the quality and accuracy of labeled datasets to improve model training.</li>
+                    </ul>
+                    <span class="service-card__bg"></span>
+                </article>
+
+
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- Education -->
+        <section id="education" class="section container">
+
+            <h3 class="resume-section__title">Education</h3>
+
+            <div class="education-cards">
+                <!-- Education Entry 1 -->
+                <article class="education-card">
+                    <h3>POLIMI Graduate School of Management, Milano</h3>
+                    <span class="education-date">SEP 2021 - SEP 2022</span>
+                    <p class="education-degree">International Master in Business Analytics and Big Data</p>
+                    <ul class="education-description">
+                        <li><strong>Final Dissertation:</strong> “Using data generated by a GAN to improve the accuracy
+                            of a CNN image classification model in the case of a small amount of initial data”</li>
+                        <li><strong>Relevant Courses:</strong> Image and Text Analysis with Deep Learning, Time Series
+                            Analysis for Finance, Machine Learning, Cloud Technologies and Big Data Frameworks, Data
+                            Warehousing, Statistics, Relational Databases, SQL</li>
+                    </ul>
+                </article>
+
+                <!-- Education Entry 2 -->
+                <article class="education-card">
+                    <h3>Bocconi University, Milano</h3>
+                    <span class="education-date">SEP 2016 - APR 2020</span>
+                    <p class="education-degree">Bachelor's Degree in Business Administration and Management</p>
+                    <ul class="education-description">
+                        <li><strong>Final Dissertation:</strong> “Amazon’s Supply Chain”</li>
+                        <li><strong>Relevant Courses:</strong> Computer Science (Python), Statistics, Applied
+                            Mathematics, Mathematics, Financial Markets, Management, Business Strategy</li>
+                    </ul>
+                </article>
+
+                <!-- Education Entry 3 -->
+                <article class="education-card">
+                    <h3>Liceo Scientifico A. Righi, Cesena</h3>
+                    <span class="education-date">SEP 2011 - JUL 2016</span>
+                    <p class="education-degree">High School Diploma in Scientific Studies</p>
+                </article>
+
+                <!-- Education Entry 4 -->
+                <article class="education-card">
+                    <h3>Exchange Program, Carmel High School</h3>
+                    <span class="education-date">JAN 2015 - JUN 2015</span>
+                    <p class="education-degree">Carmel, California, USA</p>
+                </article>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <!-- Contact -->
+        <section id="contact" class="section container">
+            <h2 class="section__title">Let's Connect!</h2>
+            <div class="contact">
+                <form class="contact__form">
+                    <div class="contact__field-wrapper">
+                        <label for="contactNameTxt">Name:</label>
+                        <input id="contactNameTxt" type="text" placeholder="What's your name?" />
+                    </div>
+                    <div class="contact__field-wrapper">
+                        <label for="contactDescriptionTxt">Message:</label>
+                        <textarea id="contactDescriptionTxt" placeholder="Lets connect!"></textarea>
+                    </div>
+
+                    <button type="submit" class="contact__submit-btn">Submit</button>
+                </form>
+                <span class="contact__illustration">
+                    <img src="./assets/illustrations/connect.svg" alt="Group of people connecting with each other" />
                 </span>
-                <h3 class="service-card__title">Deployment</h3>
-                <p class="service-card__msg"> I am always available to address any issues or concerns you may have.</p>
-                <span class="service-card__bg"></span>
-            </article>
-            <article class="service-card__box">
-                <span class="service-card__illustration">
-                    <img src="./assets/services/design.svg" alt="Design Illustration"/>
-                </span>
-                <h3 class="service-card__title">Design</h3>
-                <p class="service-card__msg">Specialized in creating stunning websites that are both visually appealing and user-friendly.</p>
-                <span class="service-card__bg"></span>
-            </article>
-            <article class="service-card__box">
-                <span class="service-card__illustration">
-                    <img src="./assets/services/developing.svg" alt="Deploy Illustration"/>
-                </span>
-                <h3 class="service-card__title">Developing</h3>
-                <p class="service-card__msg"> I offer custom web development services tailored to your specific needs as a solo professional.</p>
-                <span class="service-card__bg"></span>
-            </article>
-        </div>
-    </section> -->
-
-
-<!-- Resume -->
-<section id="resume" class="section container">
-    <h2 class="section__title">Resume</h2>
-    
-    <h3 class="resume-section__title">Work Experience</h3>
-
-    <div class="service-cards">
-        
-        
-
-        <article class="service-card__box">
-            <span class="service-card__illustration">
-                <img src="./assets/services/support.svg" alt="Support Illustration"/>
-            </span>
-
-            <h3>Accenture Industry X</h3>
-            <span class="resume-date">Oct 2023 - Present</span>
-            <p class="resume-role">Packaged App Development Analyst</p>
-            <ul class="resume-description">
-                <li><strong>Backend Development:</strong> Built and optimized backend systems for an order management platform using Java, Spring Boot, and Hibernate, focusing on efficient APIs and data flow.</li>
-                <li><strong>Data Management:</strong> Integrated SQL with Hibernate and managed database data daily to ensure accuracy for order processing and reporting.</li>
-            </ul>
-            <span class="service-card__bg"></span>
-        </article>
-
-    
-        <article class="service-card__box">
-
-            <span class="service-card__illustration">
-                <img src="./assets/services/design.svg" alt="Design Illustration"/>
-            </span>
-
-            <h3>Accenture Industry X</h3>
-            <span class="resume-date">Jan 2023 - Sept 2023</span>
-            <p class="resume-role">Intern</p>
-            <ul class="resume-description">
-                <li><strong>Machine Learning & Computer Vision:</strong> Contributed to a Python computer vision project, where I managed data collection and supervised data labeling processes, enhancing the quality and accuracy of labeled datasets to improve model training.</li>
-            </ul>
-            <span class="service-card__bg"></span>
-        </article>
+            </div>
+        </section>
 
 
 
-    </div>
-</section>
-
-    <!-- Education Section -->
-    <!-- <div class="resume-section">
-        <h3 class="resume-section__title">Education</h3>
-        <div class="resume-item">
-            <h4>POLIMI Graduate School of Management, Milano</h4>
-            <span class="resume-date">Sep 2021 - Sep 2022</span>
-            <p class="resume-role">International Master in Business Analytics and Big Data</p>
-            <ul class="resume-description">
-                <li><strong>Final Dissertation:</strong> "Using data generated by a GAN to improve the accuracy of a CNN image classification model in the case of a small amount of initial data".</li>
-                <li><strong>Relevant Courses:</strong> Image and Text Analysis with Deep Learning, Time Series Analysis for Finance, Machine Learning, Cloud Technologies and Big Data Frameworks, Data Warehousing, Statistics, Relational Databases - SQL.</li>
-            </ul>
-        </div>
-        <div class="resume-item">
-            <h4>Bocconi University, Milano</h4>
-            <span class="resume-date">Sep 2016 - Apr 2020</span>
-            <p class="resume-role">Bachelor's Degree in Business Administration and Management</p>
-            <ul class="resume-description">
-                <li><strong>Final Dissertation:</strong> "Amazon’s Supply Chain".</li>
-                <li><strong>Relevant Courses:</strong> Computer Science (Python), Statistics, Applied Mathematics, Financial Markets, Management, Business Strategy.</li>
-            </ul>
-        </div>
-        <div class="resume-item">
-            <h4>Liceo Scientifico A. Righi, Cesena</h4>
-            <span class="resume-date">Sep 2011 - Jul 2016</span>
-            <p class="resume-role">High School Diploma in Scientific Studies</p>
-        </div>
-        <div class="resume-item">
-            <h4>Exchange Program Carmel High School, California, USA</h4>
-            <span class="resume-date">Jan 2015 - Jun 2015</span>
-            <p class="resume-role">Exchange Program</p>
-        </div>
-    </div>
-</section> -->
 
 
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="section container">
-        <h2 class="section__title">My Works</h2>
-        <div class="works">
-            <article class="work">
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <img src="./assets/works/sample.png" alt="My Work 1"/>
-                </span>
-                    <h3 class="work__title">My Landing Page</h3>
-                    <span class="work__badges">
-                    <span class="work__badge">HTML</span>
-                    <span class="work__badge">CSS</span>
-                    <span class="work__badge">JavaScript</span>
-                </span>
-                </div>
-            </article>
-            <article class="work">
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <img src="./assets/works/sample.png" alt="My Work 1"/>
-                </span>
-                    <h3 class="work__title">My Landing Page</h3>
-                    <span class="work__badges">
-                    <span class="work__badge">HTML</span>
-                    <span class="work__badge">CSS</span>
-                    <span class="work__badge">JavaScript</span>
-                </span>
-                </div>
-            </article>
-            <article class="work">
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <img src="./assets/works/sample.png" alt="My Work 1"/>
-                </span>
-                    <h3 class="work__title">My Landing Page</h3>
-                    <span class="work__badges">
-                    <span class="work__badge">HTML</span>
-                    <span class="work__badge">CSS</span>
-                    <span class="work__badge">JavaScript</span>
-                </span>
-                </div>
-            </article>
-            <article class="work">
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <img src="./assets/works/sample.png" alt="My Work 1"/>
-                </span>
-                    <h3 class="work__title">My Landing Page</h3>
-                    <span class="work__badges">
-                    <span class="work__badge">HTML</span>
-                    <span class="work__badge">CSS</span>
-                    <span class="work__badge">JavaScript</span>
-                </span>
-                </div>
-            </article>
-            <article class="work">
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <img src="./assets/works/sample.png" alt="My Work 1"/>
-                </span>
-                    <h3 class="work__title">My Landing Page</h3>
-                    <span class="work__badges">
-                    <span class="work__badge">HTML</span>
-                    <span class="work__badge">CSS</span>
-                    <span class="work__badge">JavaScript</span>
-                </span>
-                </div>
-            </article>
-            <article class="work">
-                <div class="work__box">
-                    <span class="work__img-box">
-                    <img src="./assets/works/sample.png" alt="My Work 1"/>
-                </span>
-                    <h3 class="work__title">My Landing Page</h3>
-                    <span class="work__badges">
-                    <span class="work__badge">HTML</span>
-                    <span class="work__badge">CSS</span>
-                    <span class="work__badge">JavaScript</span>
-                </span>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section container">
-        <h2 class="section__title">Let's Connect!</h2>
-        <div class="contact">
-            <form class="contact__form">
-                <div class="contact__field-wrapper">
-                    <label for="contactNameTxt">Name:</label>
-                    <input id="contactNameTxt" type="text" placeholder="What's your name?"/>
-                </div>
-                <div class="contact__field-wrapper">
-                    <label for="contactDescriptionTxt">Message:</label>
-                    <textarea id="contactDescriptionTxt" placeholder="Lets connect!"></textarea>
-                </div>
-
-                <button type="submit" class="contact__submit-btn">Submit</button>
-            </form>
-            <span class="contact__illustration">
-                <img src="./assets/illustrations/connect.svg" alt="Group of people connecting with each other"/>
-            </span>
-        </div>
-    </section>
-</main>
+    </main>
 </body>
+
 </html>
