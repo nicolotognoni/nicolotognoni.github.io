@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  overscroll-behavior: none;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  -webkit-overscroll-behavior: none;
+  -webkit-overscroll-behavior-x: none;
+  -webkit-overscroll-behavior-y: none;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #1a1a1a url('/src/components/ui/images/wallpaper/c2n0dqrs9fld1.jpeg') center/cover no-repeat fixed;
+  /* Mobile specific resets */
+  overscroll-behavior: none;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  -webkit-overscroll-behavior: none;
+  -webkit-overscroll-behavior-x: none;
+  -webkit-overscroll-behavior-y: none;
+  touch-action: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+.noise-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg==');
+  opacity: 0.05;
+  mix-blend-mode: soft-light;
+}
+
+/* Window scrollbar styles */
+[data-window-content]::-webkit-scrollbar {
+  width: 12px;
+}
+
+[data-window-content]::-webkit-scrollbar-track {
+  background: #ededed;
+}
+
+[data-window-content]::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0;
+  border-radius: 6px;
+  border: 2px solid #ededed;
+}
+
+[data-window-content]::-webkit-scrollbar-thumb:hover {
+  background-color: #808080;
+}
+
+[data-window-content] {
+  min-width: 0;
+}
+
+[data-window-content],
+[data-window-content] * {
+  max-width: 100%;
+  min-width: 0;
+}
+
