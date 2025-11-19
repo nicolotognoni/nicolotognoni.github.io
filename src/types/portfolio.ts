@@ -8,7 +8,7 @@ export type WindowSize = {
 export type WindowDescriptor = {
   title: string;
   subtitle?: string;
-  Component: ComponentType;
+  Component: ComponentType<any>;
   size: WindowSize;
   initialPosition?: {
     x: number;
