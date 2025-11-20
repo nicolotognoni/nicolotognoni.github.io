@@ -44,6 +44,11 @@ export const useWindowManager = (icons: PortfolioIcon[]) => {
             return descriptor.window.initialPosition ?? { x: 0, y: 0 };
           }
 
+          // On mobile, skip desktop positioning logic (will be set later)
+          if (isMobile) {
+            return { x: 0, y: 24 };
+          }
+
           const width = descriptor.window.size.width;
           const height = descriptor.window.size.height ?? 420;
 
@@ -65,19 +70,37 @@ export const useWindowManager = (icons: PortfolioIcon[]) => {
           };
         })();
 
+        const newWindow: WindowInstance = {
+          itemId,
+          zIndex: nextZ,
+          position: safePosition,
+          isMinimized: false,
+          isMaximized: false,
+        };
+
+        // If mobile, set size to full width, 50% height
+        if (isMobile && typeof window !== 'undefined') {
+          const mobileWidth = window.innerWidth;
+          const mobileHeight = Math.max(window.innerHeight * 0.5, 320);
+
+          // Position at left edge, centered vertically
+          newWindow.position = {
+            x: 0,
+            y: Math.max((window.innerHeight - mobileHeight) / 2, 24),
+          };
+          newWindow.sizeOverride = {
+            width: mobileWidth,
+            height: mobileHeight,
+          };
+        }
+
         return [
           ...current,
-          {
-            itemId,
-            zIndex: nextZ,
-            position: safePosition,
-            isMinimized: false,
-            isMaximized: false,
-          },
+          newWindow,
         ];
       });
     },
-    [icons]
+    [icons, isMobile]
   );
 
   const closeWindow = useCallback((itemId: string) => {
@@ -151,10 +174,11 @@ export const useWindowManager = (icons: PortfolioIcon[]) => {
             return item;
           }
 
+          const MOBILE_DOCK_HEIGHT = 140; // Height of Dock on mobile
           const chromeInset = {
             x: isMobile ? 0 : 16,
             y: isMobile ? 24 : 22,
-            bottom: 0,
+            bottom: isMobile ? MOBILE_DOCK_HEIGHT : 0, // Reserve space for Dock on mobile
           } as const;
 
           const availableWidth = Math.max(window.innerWidth - chromeInset.x * 2, isMobile ? 300 : 480);

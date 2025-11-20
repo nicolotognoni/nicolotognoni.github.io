@@ -7,7 +7,11 @@ const PDFWindow = () => {
         src={pdfPath}
         className="h-full w-full"
         title="Cover Letter PDF"
-        style={{ border: 'none' }}
+        style={{
+          border: 'none',
+          minHeight: '100%',
+          minWidth: '100%',
+        }}
       />
     </div>
   );

@@ -158,7 +158,7 @@ export const contactChannels = [
   },
 ];
 
-export const resumeLink = '/nicolotognoni_resume.pdf';
+export const resumeLink = '/nicolotognoni_resume_bendingspoons.pdf';
 
 export const articles = [
   {

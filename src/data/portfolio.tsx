@@ -20,7 +20,7 @@ const UtilitiesFolderIcon = '/icons/ToolbarUtilitiesFolderIcon.png';
 const MailIcon = '/icons/Mail.png';
 const DocumentIcon = '/icons/GenericDocumentIcon.png';
 const RecapyIcon = '/icons/appIcon.png';
-const ResumeIcon = '/icons/CV_data_analyst.png';
+const ResumeIcon = '/images/resume_bendingspoons.png';
 const PhotoBoothIcon = '/icons/PhotoBooth.png';
 const BendingSpoonCoverLetterIcon = '/images/BendingSpoon_CoverLetter_image.png';
 
@@ -149,20 +149,6 @@ export const portfolioIcons: PortfolioIcon[] = [
       Component: RecapyWindow,
       size: { width: 300, height: 200 },
       initialPosition: { x: 500, y: 300 },
-    },
-  },
-  {
-    id: 'photo-booth',
-    label: 'Photo Booth',
-    description: 'Take photos with your camera and apply fun effects.',
-    icon: PhotoBoothIcon,
-    accentColor: '#f59e0b',
-    window: {
-      title: 'Photo Booth',
-      subtitle: 'Take photos with effects',
-      Component: PhotoBoothWindow,
-      size: { width: 640, height: 480 },
-      initialPosition: { x: 200, y: 100 },
     },
   },
   {

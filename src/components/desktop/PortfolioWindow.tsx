@@ -139,10 +139,13 @@ const PortfolioWindow = ({
     const top = rect.top;
     const bottom = rect.bottom;
 
-    const nearLeft = clientX - left < RESIZE_HANDLE_SIZE;
-    const nearRight = right - clientX < RESIZE_HANDLE_SIZE;
-    const nearTop = clientY - top < RESIZE_HANDLE_SIZE;
-    const nearBottom = bottom - clientY < RESIZE_HANDLE_SIZE;
+    // Use larger touch target on mobile (44px recommended by Apple)
+    const handleSize = isMobile ? 44 : RESIZE_HANDLE_SIZE;
+
+    const nearLeft = clientX - left < handleSize;
+    const nearRight = right - clientX < handleSize;
+    const nearTop = clientY - top < handleSize;
+    const nearBottom = bottom - clientY < handleSize;
 
     // Top edge is reserved for dragging only, no resize
     // Check corners first (they have priority) - exclude top corners
@@ -341,14 +344,15 @@ const PortfolioWindow = ({
 
     const minWidth = 220;
     const minHeight = 160;
+    const MOBILE_DOCK_HEIGHT = 140;
     const chromeInsets = {
-      x: 16,
-      y: 22,
-      bottom: 0,
+      x: isMobile ? 0 : 16,
+      y: isMobile ? 24 : 22,
+      bottom: isMobile ? MOBILE_DOCK_HEIGHT : 0,
     } as const;
     const maxWidth = Math.max(window.innerWidth - chromeInsets.x * 2, minWidth);
     const maxHeight = Math.max(
-      window.innerHeight - chromeInsets.y,
+      window.innerHeight - chromeInsets.y - chromeInsets.bottom,
       minHeight
     );
 
@@ -371,22 +375,10 @@ const PortfolioWindow = ({
       const state = resizeStateRef.current;
       if (!state) return;
 
-      // Cancel any pending animation frame
-      if (resizeRafId !== null) {
-        cancelAnimationFrame(resizeRafId);
-        resizeRafId = null;
-      }
-
-      // Apply final resize if there's a pending update
-      if (pendingResize) {
-        state.element.style.width = `${pendingResize.width}px`;
-        state.element.style.height = `${pendingResize.height}px`;
-        state.element.style.transform = `translate3d(${pendingResize.x}px, ${pendingResize.y}px, 0)`;
-        pendingResize = null;
-      }
-
       state.element.style.willChange = '';
-      target.releasePointerCapture(state.pointerId);
+      if (state.pointerId !== undefined) {
+        target.releasePointerCapture(state.pointerId);
+      }
 
       resizeStateRef.current = null;
       setResizeDirection(null);
@@ -394,10 +386,9 @@ const PortfolioWindow = ({
       globalThis.removeEventListener('pointermove', handleResizeMove);
       globalThis.removeEventListener('pointerup', handleResizeUp);
       globalThis.removeEventListener('pointercancel', handleResizeCancel);
+      globalThis.removeEventListener('touchmove', handleResizeTouchMove);
+      globalThis.removeEventListener('touchend', handleResizeTouchEnd);
     };
-
-    let resizeRafId: number | null = null;
-    let pendingResize: { width: number; height: number; x: number; y: number } | null = null;
 
     const handleResizeMove = (moveEvent: PointerEvent) => {
       const state = resizeStateRef.current;
@@ -432,28 +423,74 @@ const PortfolioWindow = ({
         newHeight = clamp(state.initialSize.height + deltaY, state.minHeight, state.maxHeight);
       }
 
-      // Store pending resize
-      pendingResize = { width: newWidth, height: newHeight, x: newX, y: newY };
+      // Apply resize directly without RAF throttling (like ryOS)
+      state.element.style.width = `${newWidth}px`;
+      state.element.style.height = `${newHeight}px`;
+      state.element.style.transform = `translate3d(${newX}px, ${newY}px, 0)`;
+    };
 
-      // Throttle updates using requestAnimationFrame
-      if (resizeRafId === null) {
-        resizeRafId = requestAnimationFrame(() => {
-          if (pendingResize && resizeStateRef.current) {
-            const currentState = resizeStateRef.current;
-            currentState.element.style.width = `${pendingResize.width}px`;
-            currentState.element.style.height = `${pendingResize.height}px`;
-            currentState.element.style.transform = `translate3d(${pendingResize.x}px, ${pendingResize.y}px, 0)`;
-            pendingResize = null;
-          }
-          resizeRafId = null;
-        });
+    const handleResizeTouchMove = (moveEvent: TouchEvent) => {
+      const state = resizeStateRef.current;
+      if (!state || !moveEvent.touches[0]) {
+        return;
       }
+
+      moveEvent.preventDefault();
+
+      const deltaX = moveEvent.touches[0].clientX - state.start.x;
+      const deltaY = moveEvent.touches[0].clientY - state.start.y;
+
+      let newWidth = state.initialSize.width;
+      let newHeight = state.initialSize.height;
+      let newX = state.initialPosition.x;
+      let newY = state.initialPosition.y;
+
+      const dir = state.direction;
+
+      // Handle vertical resizing (south only on mobile)
+      if (dir === 's' || dir === 'se' || dir === 'sw') {
+        newHeight = clamp(state.initialSize.height + deltaY, state.minHeight, state.maxHeight);
+      }
+
+      // Keep full width on mobile
+      if (isMobile) {
+        newWidth = window.innerWidth;
+        newX = 0;
+      }
+
+      // Apply resize directly
+      state.element.style.width = `${newWidth}px`;
+      state.element.style.height = `${newHeight}px`;
+      state.element.style.transform = `translate3d(${newX}px, ${newY}px, 0)`;
     };
 
     const handleResizeUp = (upEvent: PointerEvent) => {
       if (upEvent.pointerId !== event.pointerId) {
         return;
       }
+      const state = resizeStateRef.current;
+      if (!state) return;
+
+      const parsedWidth = parseInt(state.element.style.width, 10);
+      const parsedHeight = parseInt(state.element.style.height, 10);
+      const finalWidth = Number.isNaN(parsedWidth) ? state.initialSize.width : parsedWidth;
+      const finalHeight = Number.isNaN(parsedHeight) ? state.initialSize.height : parsedHeight;
+      const finalX = parseInt(state.element.style.transform.match(/translate3d\(([^,]+)/)?.[1] || '0', 10);
+      const finalY = parseInt(state.element.style.transform.match(/,\s*([^,]+)/)?.[1] || '0', 10);
+
+      onResize(entry.id, {
+        width: finalWidth,
+        height: finalHeight,
+      });
+
+      if (finalX !== state.initialPosition.x || finalY !== state.initialPosition.y) {
+        onMove(entry.id, { x: finalX, y: finalY });
+      }
+
+      stopResizing();
+    };
+
+    const handleResizeTouchEnd = () => {
       const state = resizeStateRef.current;
       if (!state) return;
 
@@ -486,6 +523,8 @@ const PortfolioWindow = ({
     globalThis.addEventListener('pointermove', handleResizeMove);
     globalThis.addEventListener('pointerup', handleResizeUp);
     globalThis.addEventListener('pointercancel', handleResizeCancel);
+    globalThis.addEventListener('touchmove', handleResizeTouchMove, { passive: false });
+    globalThis.addEventListener('touchend', handleResizeTouchEnd);
   };
 
   const startDrag = (event: React.PointerEvent<HTMLDivElement>) => {
@@ -728,6 +767,55 @@ const PortfolioWindow = ({
           <Component />
         </div>
       </div>
+
+      {/* Physical resize handle for mobile touch support */}
+      <div
+        className="absolute bottom-0 left-0 right-0 cursor-s-resize"
+        style={{
+          height: isMobile ? '24px' : '8px',
+          touchAction: 'none',
+          zIndex: 100,
+        }}
+        onPointerDown={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          startResize(e, 's');
+        }}
+        onMouseDown={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const pointerEvent = {
+            ...e,
+            pointerId: 1,
+            pressure: 0.5,
+            tangentialPressure: 0,
+            tiltX: 0,
+            tiltY: 0,
+            twist: 0,
+            pointerType: 'mouse' as const,
+            isPrimary: true,
+            width: 1,
+            height: 1,
+          } as React.PointerEvent<HTMLDivElement>;
+          startResize(pointerEvent, 's');
+        }}
+        onTouchStart={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const pointerEvent = {
+            ...e,
+            clientX: e.touches[0].clientX,
+            clientY: e.touches[0].clientY,
+            button: 0,
+            pointerId: e.touches[0].identifier,
+            currentTarget: e.currentTarget,
+            target: e.target,
+            preventDefault: () => e.preventDefault(),
+            stopPropagation: () => e.stopPropagation(),
+          } as unknown as React.PointerEvent<HTMLDivElement>;
+          startResize(pointerEvent, 's');
+        }}
+      />
     </div>
   );
 };
