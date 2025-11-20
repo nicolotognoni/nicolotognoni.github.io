@@ -103,7 +103,7 @@ export const projects = [
       'iOS app that transforms lengthy YouTube videos into concise, structured summaries powered by ChatGPT. Features comprehensive summaries with key points, full transcripts with timestamps, highlighted quotes, and one-click sharing. Built with a freemium model offering one daily summary for free users, with premium subscriptions for unlimited access. Perfect for students, professionals, and lifelong learners who want to maximize knowledge acquisition.',
     stack: ['Swift', 'Xcode', 'iOS', 'ChatGPT API', 'Cursor AI'],
     link: 'https://apps.apple.com/it/app/recapy-ai-youtube-summary/id6742327277',
-    image: '/src/components/ui/icons/appIcon.png',
+    image: '/icons/appIcon.png',
   },
   {
     name: 'GAN for Increasing CNN Accuracy',
@@ -112,7 +112,7 @@ export const projects = [
       'Master thesis project exploring the use of GAN-generated data to improve CNN image classification accuracy with limited initial datasets. Implemented StyleGAN2-ADA training and evaluated the minimum dataset size threshold for effective synthetic data augmentation.',
     stack: ['Python', 'StyleGAN2-ADA', 'CNN', 'TensorFlow', 'Google Colab'],
     link: 'https://github.com/nicolotognoni/GAN_for_increasing_CNN_accuracy',
-    image: '/src/components/ui/images/cifar-10.png',
+    image: '/images/cifar-10.png',
   },
   {
     name: 'Satellite Image Classification CNN',
@@ -121,7 +121,7 @@ export const projects = [
       'Convolutional Neural Network for classifying satellite images into 21 land-use categories using the UC Merced dataset. Achieved 82% accuracy with custom CNN architecture and 93% accuracy using Transfer Learning with InceptionV3 pre-trained on ImageNet.',
     stack: ['Python', 'TensorFlow', 'CNN', 'Transfer Learning', 'InceptionV3'],
     link: 'https://github.com/nicolotognoni/Satellite_Image_Classification_CNN',
-    image: '/src/components/ui/images/bgr2-2.jpg',
+    image: '/images/bgr2-2.jpg',
   },
 ];
 
@@ -169,7 +169,7 @@ export const articles = [
       'Comprehensive guide to understanding Feed Forward Neural Networks (FFNNs) from the basics. Covers Perceptrons, Deep Neural Networks, Gradient Descent, and Backpropagation. Includes a hands-on tutorial building an FFNN in Python using TensorFlow with the MNIST dataset, achieving 99% accuracy.',
     stack: ['Python', 'TensorFlow', 'Neural Networks', 'Deep Learning', 'MNIST'],
     link: 'https://medium.com/towards-artificial-intelligence/building-feedforward-neural-networks-from-scratch-c5a5cf23b97b',
-    image: '/src/components/ui/images/articles_cover/1*1HbdwyCE8coZLetO40qdXA.webp',
+    image: '/images/articles_cover/1*1HbdwyCE8coZLetO40qdXA.webp',
   },
   {
     name: 'Building iOS Applications - Comprehensive Technical Analysis',
@@ -179,7 +179,7 @@ export const articles = [
       'A comprehensive technical analysis of modern iOS development architectures, covering SwiftUI, UIKit, MVVM patterns, and best practices for building scalable iOS applications. Explores the evolution of iOS development frameworks and provides insights into modern app architecture design.',
     stack: ['Swift', 'iOS', 'SwiftUI', 'UIKit', 'MVVM'],
     link: 'https://medium.com/@nicolotognoni/building-ios-applications-a-comprehensive-technical-analysis-of-modern-development-architectures-1f3b33981f7b',
-    image: '/src/components/ui/images/articles_cover/1*Yc6XguAzVdVLphHJXRfprA.webp',
+    image: '/images/articles_cover/1*Yc6XguAzVdVLphHJXRfprA.webp',
   },
   {
     name: 'Creating a Virtual Environment with WSL2 and Linux on Windows 11',
@@ -189,7 +189,7 @@ export const articles = [
       'Step-by-step guide to installing Windows Subsystem for Linux (WSL2) and Ubuntu on Windows 11, then creating a Python virtual environment. Covers both command-line and Microsoft Store installation methods, configuration, and best practices for cross-platform development.',
     stack: ['WSL2', 'Linux', 'Ubuntu', 'Python', 'Windows'],
     link: 'https://medium.com/geekculture/creating-a-virtual-environment-with-wsl2-and-linux-on-windows-11-5ffa027ad87a',
-    image: '/src/components/ui/images/articles_cover/1*rGElibzwzjvaO_5I60xg9g.webp',
+    image: '/images/articles_cover/1*rGElibzwzjvaO_5I60xg9g.webp',
   },
   {
     name: 'Train StyleGAN2-ADA with Custom Datasets in Colab',
@@ -199,7 +199,7 @@ export const articles = [
       'Complete tutorial on training NVIDIA\'s StyleGAN2-ADA on custom datasets in Google Colab using TensorFlow 1.14. Covers data preparation, fine-tuning techniques, and result analysis. Perfect for anyone looking to generate high-quality synthetic images using state-of-the-art GAN technology.',
     stack: ['Python', 'StyleGAN2-ADA', 'TensorFlow', 'Google Colab', 'GANs'],
     link: 'https://medium.com/geekculture/train-stylegan2-ada-with-custom-datasets-in-colab-11accf22ef9b',
-    image: '/src/components/ui/images/articles_cover/1*S1SozupIv-22cpP2qECnfQ.webp',
+    image: '/images/articles_cover/1*S1SozupIv-22cpP2qECnfQ.webp',
   },
 ];
 

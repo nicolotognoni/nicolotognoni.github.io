@@ -24,20 +24,20 @@ const FinderWindow = () => {
       name: 'Desktop',
       path: '/Desktop',
       isDirectory: true,
-      icon: '/src/components/ui/icons/ToolbarDesktopFolderIcon.png',
+      icon: '/icons/ToolbarDesktopFolderIcon.png',
     },
     {
       name: 'Articles',
       path: '/Articles',
       isDirectory: false,
-      icon: '/src/components/ui/icons/GenericFolderIcon.png',
+      icon: '/icons/GenericFolderIcon.png',
       appId: 'articles',
     },
     {
       name: 'Trash',
       path: '/Trash',
       isDirectory: true,
-      icon: '/src/components/ui/icons/FullTrashIcon.png',
+      icon: '/icons/FullTrashIcon.png',
     },
   ];
 
@@ -71,7 +71,7 @@ const FinderWindow = () => {
       name: 'Twitter',
       path: '/Applications/twitter',
       isDirectory: false,
-      icon: '/src/components/ui/icons/twitter1.jpg',
+      icon: '/icons/twitter1.jpg',
       appId: 'twitter',
     };
 

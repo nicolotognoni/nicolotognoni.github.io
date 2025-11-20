@@ -29,7 +29,7 @@ body {
 body {
   margin: 0;
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: #1a1a1a url('/src/components/ui/images/wallpaper/c2n0dqrs9fld1.jpeg') center/cover no-repeat fixed;
+  background: #1a1a1a url('/images/wallpaper/c2n0dqrs9fld1.jpeg') center/cover no-repeat fixed;
   /* Mobile specific resets */
   overscroll-behavior: none;
   overscroll-behavior-x: none;

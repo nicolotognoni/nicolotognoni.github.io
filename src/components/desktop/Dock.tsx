@@ -355,7 +355,7 @@ const Dock = ({ icons, onOpen, activeIconIds }: DockProps) => {
             <div
               className="absolute inset-0"
               style={{
-                backgroundImage: 'url(/src/components/ui/images/wallpaper/c2n0dqrs9fld1.jpeg)',
+                backgroundImage: 'url(/images/wallpaper/c2n0dqrs9fld1.jpeg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center 60%',
                 transform: 'scaleY(-1)',

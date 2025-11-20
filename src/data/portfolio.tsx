@@ -12,17 +12,17 @@ import PDFWindow from '../windows/PDFWindow';
 import type { PortfolioIcon } from '../types/portfolio';
 
 // Apple original icon paths
-const FinderIcon = '/src/components/ui/icons/FinderIcon.png';
-const GenericFolderIcon = '/src/components/ui/icons/GenericFolderIcon.png';
-const LibraryFolderIcon = '/src/components/ui/icons/ToolbarLibraryFolderIcon.png';
-const iMacIcon = '/src/components/ui/icons/com.apple.imac-g5-17.png';
-const UtilitiesFolderIcon = '/src/components/ui/icons/ToolbarUtilitiesFolderIcon.png';
-const MailIcon = '/src/components/ui/icons/Mail.png';
-const DocumentIcon = '/src/components/ui/icons/GenericDocumentIcon.png';
-const RecapyIcon = '/src/components/ui/icons/appIcon.png';
-const ResumeIcon = '/src/components/ui/icons/CV_data_analyst.png';
-const PhotoBoothIcon = '/src/components/ui/icons/PhotoBooth.png';
-const BendingSpoonCoverLetterIcon = '/src/components/ui/images/BendingSpoon_CoverLetter_image.png';
+const FinderIcon = '/icons/FinderIcon.png';
+const GenericFolderIcon = '/icons/GenericFolderIcon.png';
+const LibraryFolderIcon = '/icons/ToolbarLibraryFolderIcon.png';
+const iMacIcon = '/icons/com.apple.imac-g5-17.png';
+const UtilitiesFolderIcon = '/icons/ToolbarUtilitiesFolderIcon.png';
+const MailIcon = '/icons/Mail.png';
+const DocumentIcon = '/icons/GenericDocumentIcon.png';
+const RecapyIcon = '/icons/appIcon.png';
+const ResumeIcon = '/icons/CV_data_analyst.png';
+const PhotoBoothIcon = '/icons/PhotoBooth.png';
+const BendingSpoonCoverLetterIcon = '/images/BendingSpoon_CoverLetter_image.png';
 
 export const portfolioIcons: PortfolioIcon[] = [
   {

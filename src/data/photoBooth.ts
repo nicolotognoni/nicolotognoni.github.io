@@ -6,7 +6,7 @@ export const appMetadata = {
     url: 'https://ryo.lu',
   },
   github: 'https://github.com/ryokun6/ryos',
-  icon: '/src/components/ui/icons/PhotoBooth.png',
+  icon: '/icons/PhotoBooth.png',
 };
 
 export const helpItems = [
