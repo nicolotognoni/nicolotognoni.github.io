@@ -121,13 +121,16 @@ export const useWindowManager = (icons: PortfolioIcon[]) => {
   const moveWindow = useCallback((itemId: string, position: WindowInstance['position']) => {
     setInstances((current) =>
       current.map((item) => {
-        if (item.itemId !== itemId || item.isMaximized) {
+        if (item.itemId !== itemId) {
           return item;
         }
 
+        // Auto-unmaximize when user moves window
         return {
           ...item,
           position,
+          isMaximized: false,
+          restoreState: undefined,
         };
       })
     );
@@ -174,7 +177,7 @@ export const useWindowManager = (icons: PortfolioIcon[]) => {
             return item;
           }
 
-          const MOBILE_DOCK_HEIGHT = 140; // Height of Dock on mobile
+          const MOBILE_DOCK_HEIGHT = 80; // Height of Dock on mobile
           const chromeInset = {
             x: isMobile ? 0 : 16,
             y: isMobile ? 24 : 22,
@@ -217,10 +220,11 @@ export const useWindowManager = (icons: PortfolioIcon[]) => {
     (itemId: string, size: WindowInstance['sizeOverride']) => {
       setInstances((current) =>
         current.map((item) => {
-          if (item.itemId !== itemId || item.isMaximized) {
+          if (item.itemId !== itemId) {
             return item;
           }
 
+          // Allow resize even when maximized
           return {
             ...item,
             sizeOverride: size,

@@ -344,7 +344,7 @@ const PortfolioWindow = ({
 
     const minWidth = 220;
     const minHeight = 160;
-    const MOBILE_DOCK_HEIGHT = 140;
+    const MOBILE_DOCK_HEIGHT = 80;
     const chromeInsets = {
       x: isMobile ? 0 : 16,
       y: isMobile ? 24 : 22,
@@ -770,11 +770,11 @@ const PortfolioWindow = ({
 
       {/* Physical resize handle for mobile touch support */}
       <div
-        className="absolute bottom-0 left-0 right-0 cursor-s-resize"
+        className="absolute bottom-0 left-0 right-0 cursor-s-resize pointer-events-auto"
         style={{
           height: isMobile ? '24px' : '8px',
           touchAction: 'none',
-          zIndex: 100,
+          zIndex: 1000,
         }}
         onPointerDown={(e) => {
           e.preventDefault();
