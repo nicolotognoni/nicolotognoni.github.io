@@ -473,19 +473,15 @@ const ProjectsWindow = () => {
                     <th className="px-3 py-1.5 text-left font-semibold uppercase tracking-[0.28em]">
                       Name
                     </th>
-                    {!isMobile && (
-                      <>
-                        <th className="px-3 py-1.5 text-left font-semibold uppercase tracking-[0.28em]">
-                          Date Modified
-                        </th>
-                        <th className="px-3 py-1.5 text-left font-semibold uppercase tracking-[0.28em]">
-                          Size
-                        </th>
-                        <th className="px-3 py-1.5 text-left font-semibold uppercase tracking-[0.28em]">
-                          Kind
-                        </th>
-                      </>
-                    )}
+                    <th className="px-3 py-1.5 text-left font-semibold uppercase tracking-[0.28em]">
+                      Date Modified
+                    </th>
+                    <th className="px-3 py-1.5 text-left font-semibold uppercase tracking-[0.28em]">
+                      Size
+                    </th>
+                    <th className="px-3 py-1.5 text-left font-semibold uppercase tracking-[0.28em]">
+                      Kind
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -494,7 +490,13 @@ const ProjectsWindow = () => {
                     return (
                       <tr
                         key={row.name}
-                        onClick={() => setActiveIndex(index)}
+                        onClick={() => {
+                          if (isMobile && isActive) {
+                            handleDoubleClick(index);
+                          } else {
+                            setActiveIndex(index);
+                          }
+                        }}
                         onDoubleClick={() => handleDoubleClick(index)}
                         className={`cursor-default border-b border-[#d5dae4] text-[11px] ${isActive
                           ? 'bg-[#dbe2f0]'
@@ -504,15 +506,11 @@ const ProjectsWindow = () => {
                         <td className="px-3 py-1.5 text-[11px] font-semibold text-[#1d212c]">
                           {row.name}
                         </td>
-                        {!isMobile && (
-                          <>
-                            <td className="px-3 py-1.5 text-[#4c5461]">
-                              {row.dateModified}
-                            </td>
-                            <td className="px-3 py-1.5 text-[#4c5461]">{row.size}</td>
-                            <td className="px-3 py-1.5 text-[#4c5461]">{row.kind}</td>
-                          </>
-                        )}
+                        <td className="px-3 py-1.5 text-[#4c5461]">
+                          {row.dateModified}
+                        </td>
+                        <td className="px-3 py-1.5 text-[#4c5461]">{row.size}</td>
+                        <td className="px-3 py-1.5 text-[#4c5461]">{row.kind}</td>
                       </tr>
                     );
                   })}
@@ -528,14 +526,10 @@ const ProjectsWindow = () => {
                     ? `${activeIndex + 1} of ${projects.length} selected`
                     : 'No items'}
                 </span>
-                {!isMobile && (
-                  <>
-                    <span className="text-[#6a7280]">
-                      {selectedRow?.size ?? '—'}
-                    </span>
-                    <span className="text-[#6a7280]">213.74 GB available</span>
-                  </>
-                )}
+                <span className="text-[#6a7280]">
+                  {selectedRow?.size ?? '—'}
+                </span>
+                <span className="text-[#6a7280]">213.74 GB available</span>
               </div>
             )}
           </section>

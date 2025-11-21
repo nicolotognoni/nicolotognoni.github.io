@@ -14,19 +14,19 @@ export const profile = {
 export const timeline = [
   {
     title: 'Packaged App Development Senior Analyst — Accenture Industry X',
-    period: 'Nov 2024 – Present',
+    period: 'Nov 2025 – Present',
     summary:
-      'Leading specific features and functionalities of the backend order management platform, managing cross-functional teams across Italy and India. Independently designed and integrated GenAI agent systems for automated code review of pull requests, significantly accelerating the PR review workflow.',
+      'Lead backend features for the order management platform, coordinating teams in Italy and India. Responsible for code quality, delivery timelines, and mentoring junior developers. Designed and deployed GenAI agents for automated code review, improving PR workflow efficiency.',
   },
   {
     title: 'Packaged App Development Analyst — Accenture Industry X',
-    period: 'Oct 2023 – Oct 2024',
+    period: 'Oct 2023 – Oct 2025',
     summary:
       'Developed backend systems using Java, Spring Boot, and Hibernate for order management platform, managing SQL databases and API development.',
   },
   {
-    title: 'Backend Development Intern — Accenture Industry X',
-    period: 'Jan 2023 – Sep 2023',
+    title: 'Internship — Accenture Industry X',
+    period: 'Jan 2023 – Sept 2023',
     summary:
       'Contributed to backend development and Python computer vision projects, managing data collection and labeling processes to improve model training accuracy.',
   },
@@ -77,19 +77,19 @@ export const education = [
 export const workExperience = [
   {
     title: 'Packaged App Development Senior Analyst — Accenture Industry X',
-    period: 'Nov 2024 – Present',
+    period: 'Nov 2025 – Present',
     summary:
-      'Leading specific features and functionalities of the backend order management platform, managing cross-functional teams across Italy and India. Independently designed and integrated GenAI agent systems for automated code review of pull requests, significantly accelerating the PR review workflow. Taking full responsibility for code quality and delivery timelines while mentoring junior developers and coordinating with offshore teams.',
+      'Lead backend features for the order management platform, coordinating teams in Italy and India. Responsible for code quality, delivery timelines, and mentoring junior developers. Designed and deployed GenAI agents for automated code review, improving PR workflow efficiency.',
   },
   {
     title: 'Packaged App Development Analyst — Accenture Industry X',
-    period: 'Oct 2023 – Oct 2024',
+    period: 'Oct 2023 – Oct 2025',
     summary:
       'Developed backend systems using Java, Spring Boot, and Hibernate for order management platform, managing SQL databases and API development.',
   },
   {
-    title: 'Backend Development Intern — Accenture Industry X',
-    period: 'Jan 2023 – Sep 2023',
+    title: 'Internship — Accenture Industry X',
+    period: 'Jan 2023 – Sept 2023',
     summary:
       'Contributed to backend development and Python computer vision projects, managing data collection and labeling processes to improve model training accuracy.',
   },

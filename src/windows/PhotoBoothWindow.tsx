@@ -35,16 +35,16 @@ const cssFilters: Effect[] = [
 ];
 
 const distortionFilters: Effect[] = [
-  { name: "Bulge", filter: "bulge(-0.5)" },
+  { name: "Bulge", filter: "bulge(-0.3)" },
   { name: "Stretch", filter: "stretch(1.0)" },
-  { name: "Pinch", filter: "pinch(2.0)" },
-  { name: "Twirl", filter: "twist(-8.0)" },
-  { name: "Fish Eye", filter: "fisheye(1.5)" },
+  { name: "Pinch", filter: "pinch(1.5)" },
+  { name: "Twirl", filter: "twist(-4.0)" },
+  { name: "Fish Eye", filter: "fisheye(1.2)" },
   { name: "Squeeze", filter: "squeeze(1.0)" },
   // New exciting effects
   { name: "Kaleidoscope", filter: "kaleidoscope(0.5)" },
-  { name: "Ripple", filter: "ripple(1.5)" },
-  { name: "Glitch", filter: "glitch(2.0)" },
+  { name: "Ripple", filter: "ripple(1.2)" },
+  { name: "Glitch", filter: "glitch(1.0)" },
 ];
 
 // Combined array for compatibility with existing code

@@ -108,7 +108,7 @@ const Desktop = ({
       </main>
 
       <Dock
-        icons={icons.filter((icon) => icon.id !== 'projects' && icon.id !== 'resume' && icon.id !== 'recapy' && icon.id !== 'articles' && icon.id !== 'bending-spoon-cover-letter')}
+        icons={icons.filter((icon) => !icon.hiddenFromDock && icon.id !== 'projects' && icon.id !== 'resume' && icon.id !== 'recapy' && icon.id !== 'articles' && icon.id !== 'bending-spoon-cover-letter')}
         onOpen={onOpenWindow}
         activeIconIds={activeWindowIds}
       />

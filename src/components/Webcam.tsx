@@ -185,6 +185,14 @@ export function Webcam({
     }
   }, [stream, onPhoto, isPreview, filter]);
 
+  // Keep track of stream in ref for cleanup
+  const streamRef = useRef<MediaStream | null>(null);
+
+  // Update ref when stream changes
+  useEffect(() => {
+    streamRef.current = stream;
+  }, [stream]);
+
   const startCamera = async () => {
     try {
       const constraints = {
@@ -212,8 +220,10 @@ export function Webcam({
   };
 
   const stopCamera = () => {
-    if (stream && !isPreview) {
-      stream.getTracks().forEach((track) => track.stop());
+    // Use ref to access current stream for cleanup
+    const currentStream = streamRef.current;
+    if (currentStream && !isPreview) {
+      currentStream.getTracks().forEach((track) => track.stop());
       setStream(null);
     }
   };

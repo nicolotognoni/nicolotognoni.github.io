@@ -22,7 +22,7 @@ const MenuBar = () => {
 
   return (
     <header
-      className={`pointer-events-none fixed inset-x-0 top-0 z-[100] flex items-center justify-between px-4 font-bold text-black ${isMobile ? 'h-[24px] text-[11px]' : 'h-[22px] text-[12px]'
+      className={`pointer-events-none fixed inset-x-0 top-0 z-[100] flex items-center justify-between px-2 font-bold text-black ${isMobile ? 'h-[24px] text-[11px]' : 'h-[22px] text-[12px]'
         }`}
       style={{
         backgroundColor: 'rgba(240, 240, 240, 0.7)',
@@ -31,8 +31,7 @@ const MenuBar = () => {
         borderBottom: '1px solid rgba(0,0,0,0.1)'
       }}
     >
-      <div className="pointer-events-auto flex items-center gap-5">
-        <span className="text-base" style={{ fontSize: '15px' }}></span>
+      <div className="pointer-events-auto flex items-center gap-2">
         <nav className="flex items-center gap-4">
           <span className="font-bold tracking-tight">Portfolio</span>
           {!isMobile && (

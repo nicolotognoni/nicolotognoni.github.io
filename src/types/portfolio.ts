@@ -23,6 +23,7 @@ export type PortfolioIcon = {
   icon: ReactNode;
   accentColor: string;
   window: WindowDescriptor;
+  hiddenFromDock?: boolean;
 };
 
 export type WindowInstance = {

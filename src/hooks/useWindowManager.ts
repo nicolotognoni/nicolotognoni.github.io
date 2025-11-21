@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useIsMobile } from './useIsMobile';
 
 import type {
@@ -85,8 +85,8 @@ export const useWindowManager = (icons: PortfolioIcon[]) => {
           const maxAvailableHeight = window.innerHeight - topBarHeight - dockHeight;
 
           const mobileWidth = window.innerWidth;
-          // Use 50% height but cap at max available height
-          const mobileHeight = Math.min(Math.max(window.innerHeight * 0.5, 320), maxAvailableHeight);
+          // Use 65% height but cap at max available height, min 400px
+          const mobileHeight = Math.min(Math.max(window.innerHeight * 0.65, 400), maxAvailableHeight);
 
           // Position at left edge, centered vertically but respecting top bar
           const centerY = (window.innerHeight - mobileHeight) / 2;
@@ -110,6 +110,37 @@ export const useWindowManager = (icons: PortfolioIcon[]) => {
     },
     [icons, isMobile]
   );
+
+  // Update windows when switching to mobile view to ensure correct positioning
+  useEffect(() => {
+    if (isMobile) {
+      setInstances((current) =>
+        current.map((item) => {
+          const topBarHeight = 24;
+          const dockHeight = 80;
+          const maxAvailableHeight = window.innerHeight - topBarHeight - dockHeight;
+          const mobileWidth = window.innerWidth;
+          const mobileHeight = Math.min(Math.max(window.innerHeight * 0.65, 400), maxAvailableHeight);
+          const centerY = (window.innerHeight - mobileHeight) / 2;
+          const safeY = Math.max(centerY, topBarHeight);
+
+          return {
+            ...item,
+            position: {
+              x: 0,
+              y: safeY,
+            },
+            sizeOverride: {
+              width: mobileWidth,
+              height: mobileHeight,
+            },
+            // Reset maximized state on mobile transition to ensure consistent behavior
+            isMaximized: false,
+          };
+        })
+      );
+    }
+  }, [isMobile]);
 
   const closeWindow = useCallback((itemId: string) => {
     setInstances((current) => current.filter((item) => item.itemId !== itemId));

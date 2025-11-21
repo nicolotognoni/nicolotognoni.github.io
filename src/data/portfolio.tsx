@@ -152,6 +152,21 @@ export const portfolioIcons: PortfolioIcon[] = [
     },
   },
   {
+    id: 'photo-booth',
+    label: 'Photo Booth',
+    description: 'Take photos with webcam.',
+    icon: PhotoBoothIcon,
+    accentColor: '#e11d48',
+    window: {
+      title: 'Photo Booth',
+      subtitle: 'Camera Application',
+      Component: PhotoBoothWindow,
+      size: { width: 720, height: 540 },
+      initialPosition: { x: 150, y: 100 },
+    },
+    hiddenFromDock: true,
+  },
+  {
     id: 'bending-spoon-cover-letter',
     label: 'Cover Letter',
     description: 'Cover letter for BendingSpoon position.',
