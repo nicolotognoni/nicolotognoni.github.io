@@ -80,13 +80,21 @@ export const useWindowManager = (icons: PortfolioIcon[]) => {
 
         // If mobile, set size to full width, 50% height
         if (isMobile && typeof window !== 'undefined') {
-          const mobileWidth = window.innerWidth;
-          const mobileHeight = Math.max(window.innerHeight * 0.5, 320);
+          const topBarHeight = 24;
+          const dockHeight = 80;
+          const maxAvailableHeight = window.innerHeight - topBarHeight - dockHeight;
 
-          // Position at left edge, centered vertically
+          const mobileWidth = window.innerWidth;
+          // Use 50% height but cap at max available height
+          const mobileHeight = Math.min(Math.max(window.innerHeight * 0.5, 320), maxAvailableHeight);
+
+          // Position at left edge, centered vertically but respecting top bar
+          const centerY = (window.innerHeight - mobileHeight) / 2;
+          const safeY = Math.max(centerY, topBarHeight);
+
           newWindow.position = {
             x: 0,
-            y: Math.max((window.innerHeight - mobileHeight) / 2, 24),
+            y: safeY,
           };
           newWindow.sizeOverride = {
             width: mobileWidth,
@@ -201,7 +209,7 @@ export const useWindowManager = (icons: PortfolioIcon[]) => {
             },
             sizeOverride: {
               width: availableWidth,
-              height: Math.max(availableHeight, preferredHeight),
+              height: isMobile ? availableHeight : Math.max(availableHeight, preferredHeight),
             },
             isMaximized: true,
             isMinimized: false,

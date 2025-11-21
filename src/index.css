@@ -36,7 +36,12 @@ body {
 body {
   margin: 0;
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: #1a1a1a url('/images/wallpaper/c2n0dqrs9fld1.jpeg') center/cover no-repeat fixed;
+  background-color: #1a1a1a !important;
+  background-image: url('https://nicolotognoni.github.io/images/wallpaper/c2n0dqrs9fld1.jpeg') !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
   /* Mobile specific resets */
   overscroll-behavior: none;
   overscroll-behavior-x: none;

@@ -50,7 +50,19 @@ const App = () => {
   }, [handleOpenWindow]);
 
   return (
-    <div className="h-full w-full overflow-hidden">
+    <div className="h-full w-full overflow-hidden relative">
+      {/* Fixed background for mobile compatibility */}
+      <div
+        className="fixed inset-0 -z-10"
+        style={{
+          backgroundColor: '#1a1a1a',
+          backgroundImage: 'url(https://nicolotognoni.github.io/images/wallpaper/c2n0dqrs9fld1.jpeg)',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+
       <Desktop
         icons={portfolioIcons}
         windows={windows}

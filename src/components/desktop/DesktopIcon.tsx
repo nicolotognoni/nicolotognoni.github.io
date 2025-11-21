@@ -67,7 +67,7 @@ const DesktopIcon = ({
             <img
               src={icon}
               alt={label}
-              className={isWideIcon ? 'h-full w-auto object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]' : 'h-full w-full object-cover drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]'}
+              className={isWideIcon ? `h-full w-auto object-contain ${isMobile ? '' : 'drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]'}` : `h-full w-full object-cover ${isMobile ? '' : 'drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]'}`}
               style={{
                 filter: selected ? 'brightness(1.1)' : 'none',
                 borderRadius: isWideIcon ? '0' : '22%',
@@ -92,7 +92,7 @@ const DesktopIcon = ({
           </div>
         ) : (
           <span
-            className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] text-4xl"
+            className={`${isMobile ? '' : 'drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]'} text-4xl`}
             style={{ color: accentColor }}
           >
             {icon}
@@ -105,7 +105,7 @@ const DesktopIcon = ({
           : 'text-white'
           }`}
         style={!selected ? {
-          textShadow: '0 1px 3px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7)',
+          textShadow: isMobile ? 'none' : '0 1px 3px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.7)',
           background: 'transparent'
         } : undefined}
       >
