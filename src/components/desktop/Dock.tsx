@@ -128,7 +128,7 @@ const DockIcon = ({ item, isActive, onSelect, mouseX, isMobile }: DockIconProps)
             draggable={false}
             className="relative z-10 h-full w-full object-contain"
             style={{
-              filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.4))',
+              filter: item.id === 'experience' ? 'none' : 'drop-shadow(0 6px 12px rgba(0,0,0,0.4))',
             }}
           />
         ) : (

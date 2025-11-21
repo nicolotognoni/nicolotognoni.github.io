@@ -63,6 +63,16 @@ const Desktop = ({
             {/* Desktop icons in top right */}
             <div className={`absolute ${isMobile ? 'right-4 top-14' : 'right-8 top-8 sm:right-10 sm:top-10'}`}>
               <div className="flex flex-col gap-3">
+                {/* Macintosh HD */}
+                <DesktopIcon
+                  label="Macintosh HD"
+                  icon="/icons/disk.png"
+                  accentColor="#4da3ff"
+                  selected={selectedIcon === 'macintosh-hd'}
+                  onSelect={() => setSelectedIcon('macintosh-hd')}
+                  onOpen={() => onOpenWindow('finder')}
+                  iconId="macintosh-hd"
+                />
                 {icons
                   .filter((icon) => icon.id === 'projects' || icon.id === 'resume' || icon.id === 'recapy' || icon.id === 'bending-spoon-cover-letter')
                   .map((icon) => (

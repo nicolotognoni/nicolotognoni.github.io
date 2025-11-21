@@ -15,7 +15,7 @@ import type { PortfolioIcon } from '../types/portfolio';
 const FinderIcon = '/icons/FinderIcon.png';
 const GenericFolderIcon = '/icons/GenericFolderIcon.png';
 const LibraryFolderIcon = '/icons/ToolbarLibraryFolderIcon.png';
-const iMacIcon = '/icons/com.apple.imac-g5-17.png';
+const iMacIcon = '/icons/com.apple.imac-aluminum-20.png';
 const UtilitiesFolderIcon = '/icons/ToolbarUtilitiesFolderIcon.png';
 const MailIcon = '/icons/Mail.png';
 const DocumentIcon = '/icons/GenericDocumentIcon.png';

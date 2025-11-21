@@ -37,7 +37,7 @@ const FinderWindow = () => {
       name: 'Trash',
       path: '/Trash',
       isDirectory: true,
-      icon: '/icons/FullTrashIcon.png',
+      icon: '/icons/TrashIcon.png',
     },
   ];
 
